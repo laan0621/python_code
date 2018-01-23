@@ -1,0 +1,22 @@
+coin = [2,5,50]
+str1 = []
+str2 = []
+num1 = 83
+a = len(coin)
+b = num1
+num = a-1
+while (a>0):
+    str1.append(a)
+    a-=1
+str1.sort()
+while(1):
+    if (b > coin[str1[num]-1] or b == coin[str1[num]-1]):
+        b = b - coin[str1[num]-1]
+        str2.append(coin[num])
+    elif(num==0):
+        break
+    elif(b < coin[str1[num]-1]):
+        num-=1
+    else:
+        print('error')
+print(str2)
