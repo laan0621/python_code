@@ -1,0 +1,9 @@
+a = '*'
+b = ' '
+e = b*3
+c = b.join('**')
+d = e.join('**')
+num = 0
+print('%3s' % a)
+print('%4s' % c)
+print('%5s' % d)
