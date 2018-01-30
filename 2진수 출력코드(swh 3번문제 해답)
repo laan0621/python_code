@@ -1,0 +1,13 @@
+str=[]
+a = 78                            #이곳에 정수를 입력
+while(a>0):
+     str.append(a)
+     a = a//2
+b = len(str)
+c = 0
+str2=[]
+while(b>c):
+    str2.append(str[c]%2)
+    c+=1
+str2.reverse()
+print(str2)
