@@ -1,8 +1,6 @@
-str=[]
+str1=''
 a = 78                            #이곳에 정수를 입력
 while(a>0):
-    str.append(a % 2)
+    str1+=str(a%2)
     a = a // 2
-str.reverse()
-for b in str:
-    print(b, end='')
+print (str1[::-1])
