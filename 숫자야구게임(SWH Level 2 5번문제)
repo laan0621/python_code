@@ -1,8 +1,10 @@
 import random
 str = []
-str.append(random.randint(0,9))
-str.append(random.randint(0,9))
-str.append(random.randint(0,9))
+while len(str)<3:
+    str.append(random.randint(0,9))
+    str.append(random.randint(0,9))
+    str.append(random.randint(0,9))
+    str = list(set(str))
 strick = 0
 ball = 0
 
@@ -14,23 +16,18 @@ while(1):
     num2 =int(input('두번째 자리수를 입력하세요:  '))
     num3 =int(input('세번째 자리수를 입력하세요:  '))
     str3 = [num1,num2,num3]
-    if num1==str[0]:
-        strick+=1
-    if num2==str[1]:
-        strick+=1
-    if num3==str[2]:
-        strick+=1
-    str2=set(str3)
-    str2 = list(str2)
+    if num1==str[0]:strick+=1
+    if num2==str[1]:strick+=1
+    if num3==str[2]:strick+=1
+    str2=list(set(str3))
     a = len(str2)
     b = 0
     while a>b:
         ball+=str.count(str2[b])
         b+=1
     ball-=strick
+
     if not num1 in str and not num2 in str and not num3 in str:
-        out = 1
-    if out == 1:
         print('아웃입니다. 계속합니다.')
     elif strick == 3:
         print('3 스트라이크 입니다. 게임을 종료합니다.')
