@@ -1,0 +1,7 @@
+def cut(strs):
+    a = []
+    for str in strs:
+        a.append(str[:3])
+    return a
+str1 = ['Africa', 'Korea', 'China']
+print(cut(str1))
