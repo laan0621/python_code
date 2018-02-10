@@ -1,0 +1,5 @@
+a = int(input('초기 *의 개수를 입력하십시오:   '))
+num='*'*(a+1)
+for b in range(0,a):
+    print(' '*b,end=(''))
+    print(num[:b:-1])
