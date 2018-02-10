@@ -1,14 +1,14 @@
 import random								
 str1 = []							                                  		#정답을 저장할 변수
 while len(str1) < 3 :						                        		#str1의 길이가 3보다 작은동안 계속한다
-    str1.append(random.randint(0,9))			            			#0~9사이의 숫자를 랜덤으로 str1에 저장한다
-    str1=list(set(str1))			                      				#str1을 중복 제거 후 list형태로 변환한다
+    str1.append(random.randint(0,9))			            		    	#0~9사이의 숫자를 랜덤으로 str1에 저장한다
+    str1=list(set(str1))			                      			    	#str1을 중복 제거 후 list형태로 변환한다
 while(1):									
     strick = 0						                            			#스트라이크 저장 변수
     ball = 0						                              			#볼 저장 변수
     str2 = []			                              						#사용자에게 입력받은 값을 저장할 변수
     num = 0						                                			#다음 반복문에 사용할 변수
-    str2.append(int(input('첫번째 자리수를 입력하세요:  ')))	#사용자에게 값을 입력받아 int형으로 str2에 저장
+    str2.append(int(input('첫번째 자리수를 입력하세요:  ')))                  #사용자에게 값을 입력받아 int형으로 str2에 저장
     str2.append(int(input('두번째 자리수를 입력하세요:  ')))
     str2.append(int(input('세번째 자리수를 입력하세요:  ')))
     while(num<3):						                            		#만약 str1의 num번째 값과 str2의 num번째 값이 같으면 strick에 1을 더한다
@@ -17,9 +17,9 @@ while(1):
             num+=1
         else:
             num+=1
-    str3 = list(set(str2))			                    				#str3에 str2를 중복제거 후 list형태로 변환한다
+    str3 = list(set(str2))			                    	    			#str3에 str2를 중복제거 후 list형태로 변환한다
     a = 0							                                  		#반복문에 사용될 변수
-    while len(str3)>a:					                      			#ball에 str3의 a번째 값이 str1에 저장되어 있는 개수를 더한다
+    while len(str3)>a:					                      	    		#ball에 str3의 a번째 값이 str1에 저장되어 있는 개수를 더한다
             ball+=str1.count(str3[a])
             a+=1                                
     ball-=strick						                            		#위 과정에서 스트라이크도 포함되었으므로 스트라이크 개수를 뺀 값을 ball에 저장한다.
@@ -29,4 +29,4 @@ while(1):
         print('3 스트라이크 입니다. 게임을 종료합니다.')
         break						                               			#while은 무한루프이니 탈출을 위해 break를 사용한다
     else:
-        print('%d 스트라이크, %d 볼입니다. 계속합니다'%(strick,ball))		#그것도 아닐 시 스트라이크와 볼의 개수를 출력한다.
+        print('%d 스트라이크, %d 볼입니다. 계속합니다'%(strick,ball))	    	#그것도 아닐 시 스트라이크와 볼의 개수를 출력한다.
