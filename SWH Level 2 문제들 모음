@@ -1,0 +1,158 @@
+'''
+1번문제
+78를 이진수로 출력.
+'''
+
+str1=''
+a = 78                            #이곳에 정수를 입력
+while(a>0):
+    str1+=str(a%2)
+    a = a // 2
+print (str1[::-1])
+
+
+'''
+2번문제
+200000초를 몇일, 몇시간, 몇분, 몇초인지 계산하라. (결과는 '날 시 분 초' 로 표현)
+'''
+
+num = 200000
+second = num
+
+while(0<second-60):
+    second-=60
+minute = int((num-second)/60)
+while(0<minute-60):
+    minute-=60
+hour = int((num-second-(minute*60))/3600)
+while(0<hour-24):
+    hour-=24
+day = int((num-second-(minute*60)-(hour*3600))/86400)
+
+print(day,hour,minute,second)
+
+
+'''
+3번문제
+다음과 같은 결과를 출력하라.
+ ### ### ### 
+*   *   *   *
+ ### ### ### 
+*   *   *   *
+ ### ### ### 
+*   *   *   *
+ ### ### ### 
+'''
+
+a = '#'
+b = '*'
+c = ' '
+d = (c+a*3)*3
+e = (b+c*3)*3+b
+num = 0
+while (num<7):
+    if num % 2 == 0:
+        print(d)
+    else:
+        print(e)
+    num+=1
+    
+'''
+4번문제
+2018년 1월 1일은 월요일입니다. 2018년 중에 월과 일을 입력받고 무슨 요일인지 출력.
+(1,3,5,7,8,10,12월은 31일까지이며, 2월은 28일, 4,6,9,11월은 30일까지 입니다.)
++잘못된 월을 입력했을 시 다시 입력하게 하는 코드 추가
+'''
+
+str1=[1,3,5,7,8,10,12]
+while(1):
+    a = input('월을 입력하세요:\n')
+    a = int(a)
+    if a>12:
+        print('잘못된 월을 입력하였습니다.')
+    else:
+        break
+while(1):
+    b = input('일을 입력하세요:\n')
+    b = int(b)
+    if  a in str1:
+        if b>31:
+            print('잘못된 일을 입력하였습니다.')
+            print('%d월은 31일까지 있습니다'%a)
+        else:
+            break
+    elif  a==2:
+        if b > 28:
+            print('잘못된 일을 입력하였습니다.')
+            print('%d월은 28일까지 있습니다' % a)
+        else:
+            break
+    else:
+        if b > 30:
+            print('잘못된 일을 입력하였습니다.')
+            print('%d월은 30일까지 있습니다' % a)
+        else:
+            break
+str2={1:31,2:28,3:31,4:30,5:31,6:30,7:31,8:31,9:30,10:31,11:30,12:31}
+str3=['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
+num = 1
+day = b
+while(a>num):
+    day+=str2.get(num)
+    num+=1
+print(str3[day%7])
+
+'''
+5번문제
+~9까지 숫자 중 중복아닌 세자리의 난수값을 얻은 뒤, 세개의 숫자를 입력한다. 
+입력한 숫자가 난수값에 있으며 자리수가 일치하면 스트라이크 
+입력한 숫자가 난수값에 있으며 자리수가 일치하지 않으면 볼 
+입력한 숫자가 난수값에 없으면 아웃 을 결과로 출력하라. 
+3스트라이크가 되면 게임이 종료하며, 아니면 반복 수행한다.
+'''
+
+import random								
+str1 = []							                                                		#정답을 저장할 변수
+while len(str1) < 3 :						                        		              #str1의 길이가 3보다 작은동안 계속한다
+    str1.append(random.randint(0,9))			            		              	#0~9사이의 숫자를 랜덤으로 str1에 저장한다
+    str1=list(set(str1))			                      			    	          #str1을 중복 제거 후 list형태로 변환한다
+while(1):									
+    strick = 0						                            		              	#스트라이크 저장 변수
+    ball = 0						                                             			#볼 저장 변수
+    str2 = []			                              		              				#사용자에게 입력받은 값을 저장할 변수
+    num = 0						                                               			#다음 반복문에 사용할 변수
+    str2.append(int(input('첫번째 자리수를 입력하세요:  ')))                #사용자에게 값을 입력받아 int형으로 str2에 저장
+    str2.append(int(input('두번째 자리수를 입력하세요:  ')))
+    str2.append(int(input('세번째 자리수를 입력하세요:  ')))
+    while(num<3):						                            	               	#만약 str1의 num번째 값과 str2의 num번째 값이 같으면 strick에 1을 더한다
+        if str1[num]==str2[num]:
+            strick+=1
+            num+=1
+        else:
+            num+=1
+    str3 = list(set(str2))			                    	               			#str3에 str2를 중복제거 후 list형태로 변환한다
+    a = 0							                                                		#반복문에 사용될 변수
+    while len(str3)>a:					                                 	    		#ball에 str3의 a번째 값이 str1에 저장되어 있는 개수를 더한다
+            ball+=str1.count(str3[a])
+            a+=1                                
+    ball-=strick						                            	              	#위 과정에서 스트라이크도 포함되었으므로 스트라이크 개수를 뺀 값을 ball에 저장한다.
+    if not str2[0] in str1 and not str2[1] in str1 and not str2[2] in str1:	#만약 사용자가 입력한 숫자가 str1에 없으면 아래 print문을 실행한다.
+        print('아웃입니다. 계속합니다.')
+    elif strick == 3:						                        		              #혹은 스트라이크가 3이면 게임을 종료한다
+        print('3 스트라이크 입니다. 게임을 종료합니다.')
+        break						                               		              	#while은 무한루프이니 탈출을 위해 break를 사용한다
+    else:
+        print('%d 스트라이크, %d 볼입니다. 계속합니다'%(strick,ball))	    	#그것도 아닐 시 스트라이크와 볼의 개수를 출력한다.
+        
+
+'''
+6번문제
+초기 '*'문자의 갯수를 입력하면, 오른쪽으로 정렬되어 출력되는 코드를 작성하라.
+'''
+
+
+a = int(input('초기 *의 개수를 입력하십시오:   '))
+num='*'*(a+1)
+for b in range(0,a):
+    print(' '*b,end=(''))
+    print(num[:b:-1])
