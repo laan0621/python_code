@@ -57,7 +57,6 @@ print(num)
 '''
 
 a = input('숫자를 입력하세요>>')
-a.split()
 b = len(a)
 num = 0
 resurt = 0
