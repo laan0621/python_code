@@ -166,7 +166,6 @@ for b in range(0,a):
 '''
 
 str1 = input('영어로 된 문장을 입력하세요>>')
-str1.split()
 big = 0
 small = 0
 for a in str1:
