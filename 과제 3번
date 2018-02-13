@@ -1,0 +1,29 @@
+class Point() :
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def set(self,x,y):
+        self.x = x
+        self.y = y
+    def get(self):
+        return self.x,self.y
+    def move (self,x1,y1):
+        self.x += x1
+        self.y += y1
+point = Point(0,0)
+while (1):
+    a = int(input('1:좌푯값 설정,2:현재 좌푯값,3:좌표 위치 이동,이외:종료>>'))
+
+    if a == 1:
+        x = int(input('x좌표 설정>>'))
+        y = int(input('y좌표 설정>>'))
+        point.set(x,y)
+    elif a == 2:
+        print('x좌표: %d,y좌표: %d'%point.get())
+    elif a == 3:
+        x = int(input('x좌표에 몇을 추가하시겠습니까?: '))
+        y = int(input('y좌표에 몇을 추가하시겠습니까?: '))
+        point.move(x,y)
+    else:
+        print('종료합니다')
+        break
