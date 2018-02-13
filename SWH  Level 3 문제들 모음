@@ -83,7 +83,6 @@ c = 0
 a.sort()
 str1 = []
 while c < len(a):
-    if a[c][0] == a[0][0] and not [a[c][1],a[c][2]] in str1:
+    if a[c][0] == a[0][0]:
         print('(%d, %d)'%(a[c][1],a[c][2]))
-        str1.append([a[c][1],a[c][2]])
     c+=1
