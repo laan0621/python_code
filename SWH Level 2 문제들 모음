@@ -158,6 +158,33 @@ for b in range(0,a):
     print(num[:b:-1])
 
 
+'''
+7번문제
+입력하는 문자열이 '[' 와 ']'가 쌍으로 들어있는 문장을 체크하는 코드를 작성합니다. 
+']' 이 '['보다 먼저 나올 수는 없습니다.
+'''
+
+while(1):
+    str1 = input('문장을 체크합니다.종료하시려면 N을 입력하세요.')
+    if str1 == 'N':
+        break
+    str2 = []
+    for a in str1:
+        if a == '[' or a == ']':
+            str2.append(a)
+    num = len(str2)
+    num2=0
+    if num % 2 == 1:
+        num2 = 1
+    else:
+        for a in range(1,num//2+1):
+            if not str2[a - 1] == '[' and not str2[-a] == ']':
+                num2 = 1
+                break
+    if num2 == 1:
+        print('잘못된 문장입니다.')
+    else:
+        print('올바른 문장입니다.')
 
 
 '''
