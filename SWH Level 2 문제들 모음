@@ -174,7 +174,7 @@ while(1):
             str2.append(a)
     for b in range(0,len(str2)):
         d = str2[b]
-        if not d == 0 and d == '[' and ']'in str2:
+        if d == '[' and ']'in str2:
             c = str2.index(']')
             if not c == -1 and b < c:
                 str2[b] = 0
