@@ -176,7 +176,7 @@ while(1):
         d = str2[b]
         if d == '[' and ']'in str2:
             c = str2.index(']')
-            if not c == -1 and b < c:
+            if b < c:
                 str2[b] = 0
                 str2[c] = 0
     if not str2.count(0) == len(str2):
