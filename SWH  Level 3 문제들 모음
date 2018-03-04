@@ -32,7 +32,34 @@ print(str2)
 입력한 수와 같은 값을 가지는 쌍을 출력하세요.
 '''
 
-
+str1 = [4, 8, 12, 16]
+str2 = []
+str3 = []
+str4 = []
+num = int(input('사칙연산을 통해 얻어질 수 있는 값>>'))
+while True:
+    for a in str1:
+        for b in str1:
+            if a+b == num:
+                str2.append([a,b])
+            if a-b == num:
+                str2.append([a,b])
+            if a*b == num:
+                str2.append([a,b])
+            if a/b == num:
+                str2.append([a,b])
+    break
+for c in str2:
+    if c[0]>c[1] :
+        str3.append([c[1],c[0]])
+    else:
+        str3.append(c)
+for d in str3:
+    if not d in str4:
+        print(d)
+        str4.append(d)
+        
+        
 '''
 3번문제
 다음 입사문제를 변형하였습니다.
