@@ -113,3 +113,42 @@ while c < len(a):
     if a[c][0] == a[0][0]:
         print('(%d, %d)'%(a[c][1],a[c][2]))
     c+=1
+
+
+'''
+5번문제
+자연수 n개로 이뤄진 숫자들 중 각 원소들의 합이 s인 수를 출력합니다. 
+(단, 원소들간의 곱이 최대인 숫자)
+'''
+
+a = int(input("자연수의 개수를 입력하세요:"))
+b = int(input("자연수의 합을 입력하세요:"))
+num = 0
+max = 0
+resurt = []
+max_resurt = []
+num = 0
+while num < a:
+    max += 9*(10**num)
+    num+=1
+num = 0
+while num<=max:
+    num2 = 0
+    re_resurt = []
+    for c in str(num):
+        num2+=int(c)
+    if num2 == b:
+        for d in str(num):
+            re_resurt.append(int(d))
+        resurt.append(re_resurt)
+    num+=1
+num2 = 0
+for i in resurt:
+    num = 1
+    for f in i:
+        num *= f
+    if num2<num:
+        num2 = num
+        max_resurt = i
+
+print(max_resurt)
