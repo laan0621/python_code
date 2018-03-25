@@ -4,7 +4,7 @@
 '''
 
 str1=''
-a = 78                            #이곳에 정수를 입력
+a = int(input("변환할 수 입력>>"))
 while(a>0):
     str1+=str(a%2)
     a = a // 2
