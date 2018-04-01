@@ -161,27 +161,19 @@ print(max_resurt)
 
 '''
 6번문제
-연속된 자연수의 합으로 입력한 숫자를 표현하는 방법을 출력하는 코드를 작성하.
+연속된 자연수의 합으로 입력한 숫자를 표현하는 방법을 출력하는 코드를 작성하라.
 '''
 
-a = int(input("자연수를 입력하세요>>"))
-num = 1
-resurt = []
-while num<=a:
-    resurt2 = []
-    num2 = 0
-    num3 = num
-    while True:
-        num2+=num3
-        resurt2.append(num3)
-        if num2 == a:
+num = int(input("자연수를 입력하세요>>"))
+a = 1
+while a<= num:
+    check = num
+    str1 = []
+    for b in range(a,num+1):
+        str1.append(b)
+        check -= b
+        if check == 0:
+            print(str1)
+        elif check < 0:
             break
-        elif num2>a:
-            resurt2=[0]
-            break
-        num3+=1
-    resurt.append(resurt2)
-    num+=1
-for i in resurt:
-    if not i[0] == 0:
-        print(i)
+    a+=1
