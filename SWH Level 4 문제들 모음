@@ -54,3 +54,21 @@ while num > num2 :
     d = c.join(a)
     print(d.center(num,' '))
     num2+=2
+    
+
+'''
+4번문제
+문자열 찾기(탐색)
+STEP1. 찾을 문자열 입력
+STEP2. 찾는 문자열 입력
+STEP3. 찾은 위치를 출력
+'''
+
+str1 = input("찾을 문자열 : ")
+str2 = input("찾는 문자열 : ")
+num = len(str2)
+for a in range(0,len(str1)):
+    if str1[a:a+num] == str2:
+        print(a + 1, end=" ")
+        print("~", end=" ")
+        print(a + num)
